@@ -7,6 +7,7 @@ import LoadingOverlay from "../../../components/Loaders/LoadingOverlay";
 import supabase from "../../../services/supabase";
 import EmailInput from "../../../components/Auth/Email/EmailInput";
 import styles from "./signup.module.css";
+import GoogleButton from "../../../components/Auth/Google/GoogleButton";
 
 const SignUp = () => {
   const [nickName, setNickName] = useState(null);
@@ -70,13 +71,8 @@ const SignUp = () => {
           <form onSubmit={(e) => addUser(e)}>
             <NickNameInput nickName={nickName} setNickName={setNickName} />
             <EmailInput email={email} setEmail={setEmail} />
-            <PasswordInput
-              passwordError={passwordError}
-              password={password}
-              setPassword={setPassword}
-            />
             <CheckBox />
-            {/* <GoogleButton /> */}
+            <GoogleButton />
             <a href="/sign-in" className={styles.link}>
               Already have account
             </a>

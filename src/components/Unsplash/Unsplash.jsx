@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./unsplash.module.css";
+import Giphy from "../Giphy/Giphy";
 
 export default function Unsplash({ query, onSelect }) {
   const [images, setImages] = useState(null);
@@ -61,6 +62,7 @@ export default function Unsplash({ query, onSelect }) {
                 />
               ))}
             </div>
+            <Giphy word={query}/>
             <button className={styles.closeBtn} onClick={() => setShowModal(false)}>
               Close
             </button>

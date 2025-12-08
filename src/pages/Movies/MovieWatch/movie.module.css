@@ -1,0 +1,16 @@
+.container {
+  color: white;
+  padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 5vw, 5rem);
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.frame{
+    top: 0;
+    left: 0;
+    width: max-content;
+    height: max-content;
+}

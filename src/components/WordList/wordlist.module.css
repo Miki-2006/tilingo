@@ -39,3 +39,16 @@
   color: var(--textWhite);
   resize: vertical;
 }
+.word{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.word b{
+  font-size: 1.2rem;
+}
+.soundIcon {
+  font-size: 1.5rem; /* text-xl */
+  color: var(--iconColor);
+}

@@ -10,14 +10,20 @@ import Definition from "./pages/Definition/Definition.jsx";
 import Quizzes from "./pages/Quizzes/Quizzes.jsx";
 import QuizCard from "./components/QuizCard/QuizCard.jsx";
 import TestGenerate from "./pages/TestPages/TestGenerate/TestGenerate.jsx";
+import BooksPage from "./pages/Books/Books.jsx";
+import BookReadingPage from "./pages/Books/BookReadingPage/BookReadingPage.jsx";
+import GraphTestPage from "./pages/GraphTestPage/GraphTestPage.jsx";
+import LanguagesPage from "./pages/Languages/LanguagesPage.jsx";
+import MoviesPage from "./pages/Movies/MoviesPage.jsx";
+import MovieWatch from "./pages/Movies/MovieWatch/MovieWatch.jsx";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Main />}/>
-        <Route path="/dictionary" element={<Definition />}/>
+        <Route path="/" element={<Main />} />
+        <Route path="/dictionary" element={<Definition />} />
         <Route path="/quizzes" element={<Quizzes />} />
         <Route path="/quizzes/quiz/:id" element={<QuizCard />} />
         <Route path="/quizzes/quiz/:id/test" element={<TestGenerate />} />
@@ -25,6 +31,13 @@ function App() {
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/books" element={<BooksPage />} />
+        <Route path="/books/:id" element={<BookReadingPage />} />
+        <Route path="/graphs" element={<GraphTestPage />} />
+        <Route path="/languages" element={<LanguagesPage />} />
+        <Route path="/movies" element={<MoviesPage />} />
+        <Route path="/movies/:id" element={<MovieWatch />} />
+        <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>
       <Footer />
     </div>

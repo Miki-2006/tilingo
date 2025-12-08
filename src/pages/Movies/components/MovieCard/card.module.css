@@ -1,0 +1,38 @@
+/* components/BookCard.module.css */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 1rem 0;
+  padding: 0.7rem;
+  max-width: 300px;
+}
+
+.cover {
+  width: 90%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 90%;
+}
+
+.title {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.speaker {
+  font-style: italic;
+  color: #555;
+  margin: 0.5rem 0;
+}

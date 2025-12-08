@@ -1,0 +1,11 @@
+/* SideHandleNode.module.css */
+.node {
+  padding: 20px 30px;
+  border: 2px solid #00796b;
+  border-radius: 8px;
+  font-weight: bold;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

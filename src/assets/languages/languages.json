@@ -1,0 +1,26 @@
+[
+  {
+    "language": "English",
+    "abbreviation": "ENG",
+    "description": "English — the language of clarity and action",
+    "country-flag-icons": ["GB.svg", "US.svg"]
+  },
+  {
+    "language": "한국어",
+    "abbreviation": "한",
+    "description": "한국어는 예의와 관계의 언어예요",
+    "country-flag-icons": ["KR.svg"]
+  },
+  {
+    "language": "Русский",
+    "abbreviation": "РУС",
+    "description": "Русский язык — язык смысла и интонации",
+    "country-flag-icons": ["RU.svg"]
+  },
+  {
+    "language": "Кыргыз тили",
+    "abbreviation": "КЫР",
+    "description": "Кыргыз тили — жандуулуктун, сылыктыктын жана табияттын тили",
+    "country-flag-icons": ["KG.svg"]
+  }
+]

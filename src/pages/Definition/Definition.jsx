@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
 import WordTranslateForm from "../../components/Forms/WordTranslateFrom/WordTranslateForm";
 import LoadingOverlay from "../../components/Loaders/LoadingOverlay";
-import { getDefinitionFromDictionaryApi } from "../../services/dictionary";
 import WordsList from "../../components/WordList/WordsList";
 import supabase from "../../services/supabase";
 import { useNavigate } from "react-router-dom";
 import Unsplash from "../../components/Unsplash/Unsplash";
 import styles from "./definition.module.css";
+import langs from "langs";
+import { franc } from "franc-min";
 
 const Definition = () => {
   const [word, setWord] = useState(null);
-  const [definition, setDefinition] = useState(null);
+  const [language, setLanguage] = useState(null);
+  const [wordData, setWordData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -20,20 +22,58 @@ const Definition = () => {
   const [selectedModuleError, setSelectedModuleError] = useState(false);
   const navigate = useNavigate();
 
+  const detectLanguage = (input) => {
+    const langCode = franc(input, {
+      minLength: 1,
+      only: ["eng", "rus", "kor", "kir"],
+    });
+
+    if (langCode === "und") {
+      console.log("Could not determine language");
+      return;
+    }
+
+    const lang = langs.where("3", langCode);
+    const language = lang ? lang.name : "Unknown language";
+
+    return language;
+  };
+
+  const getDefinition = async () => {
+    try {
+      const res = await fetch(`http://localhost:3000/dictionary/definition/${word}`)
+      if (res.ok) {
+        const data = await res.json()        
+        setWordData(data)
+      } else {
+        setError(true)
+      }
+    } catch (error) {
+      console.error(`Error in fetching definition from server: ${error}`);
+    }
+  }
+
   const fetchDefinition = async (e) => {
     e.preventDefault();
     setLoading(true);
-    await getDefinitionFromDictionaryApi(word, setDefinition, setError);
-    if (!error) {
+    const language = await detectLanguage(word);
+    if (language === "English") {
+      setLanguage("ENG");
+      await getDefinition();
+      if (!error) {
+        setLoading(false);
+      }
+    } else if (language === "Korean") {
+      setLanguage("KOR");
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    if (definition) {
+    if (wordData) {
       setLoading(false);
     }
-  }, [definition]);
+  }, [wordData]);
 
   useEffect(() => {
     const fetchModulesOfUser = async () => {
@@ -78,8 +118,7 @@ const Definition = () => {
       //   console.error(error);
       // }
       // setModulesOfUser(res.modules);
-      console.log(image);
-      
+
       setSuccess(true);
       setTimeout(() => setSuccess(false), 1500);
       setLoading(false);
@@ -90,7 +129,7 @@ const Definition = () => {
   };
 
   const handleDefinitionChange = (newDefinition) => {
-    setDefinition(newDefinition);
+    setWordData(prev => prev.definition = newDefinition);
   };
 
   return (
@@ -106,16 +145,19 @@ const Definition = () => {
       {error && <b className={styles.errorText}>We couldn't find the word!</b>}
 
       <div className={styles.info}>
-        <WordsList
-          definition={definition}
-          onDefinitionChange={handleDefinitionChange}
-        />
+        {wordData && (
+          <WordsList
+            definition={wordData.definition}
+            wordData={wordData}
+            onDefinitionChange={handleDefinitionChange}
+          />
+        )}
 
-        {definition && (
+        {language && (
           <Unsplash query={word} onSelect={(url) => setImage(url)} />
         )}
 
-        {definition && modulesOfUser && (
+        {wordData && modulesOfUser && (
           <div className={styles.modules}>
             <b className={styles.modulesTitle}>my modules:</b>
             <ul className={styles.modulesList}>
@@ -137,7 +179,7 @@ const Definition = () => {
           </div>
         )}
 
-        {definition && (
+        {wordData && (
           <button onClick={handleSave} className={styles.learnButton}>
             Learn
           </button>

@@ -6,6 +6,7 @@ import LoadingOverlay from "../../../components/Loaders/LoadingOverlay";
 import { useNavigate } from "react-router-dom";
 import styles from "./signin.module.css";
 import supabase from "../../../services/supabase";
+import GoogleButton from "../../../components/Auth/Google/GoogleButton";
 
 const SignIn = () => {
   const [nickName, setNickName] = useState(null);
@@ -53,13 +54,8 @@ const SignIn = () => {
           <h1 className={styles.title}>Welcome!</h1>
           <form onSubmit={(e) => checkUserFromDB(e)}>
             <NickNameInput nickName={nickName} setNickName={setNickName} />
-            <PasswordInput
-              password={password}
-              setPassword={setPassword}
-              isPasswordNotCorrect={isPasswordNotCorrect}
-            />
             <CheckBox />
-            {/* <GoogleButton /> */}
+            <GoogleButton />
             <a href="/sign-up" className={styles.link}>
               Create Account
             </a>
