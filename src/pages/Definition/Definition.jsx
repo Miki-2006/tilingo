@@ -37,11 +37,15 @@ const Definition = () => {
     const language = lang ? lang.name : "Unknown language";
 
     return language;
+    
   };
 
-  const getDefinition = async () => {
+  const getDefinition = async (lang) => {
+    if (lang === null) {
+      throw new Error('Set the language!!!')
+    }
     try {
-      const res = await fetch(`http://localhost:3000/dictionary/definition/${word}`)
+      const res = await fetch(`http://localhost:3000/dictionary/${lang}/definition/${word}`)
       if (res.ok) {
         const data = await res.json()        
         setWordData(data)
@@ -59,13 +63,16 @@ const Definition = () => {
     const language = await detectLanguage(word);
     if (language === "English") {
       setLanguage("ENG");
-      await getDefinition();
+      await getDefinition("english");
       if (!error) {
         setLoading(false);
       }
     } else if (language === "Korean") {
       setLanguage("KOR");
-      setLoading(false);
+      await getDefinition("korean")
+      if (!error) {
+        setLoading(false);
+      }
     }
   };
 
@@ -110,15 +117,6 @@ const Definition = () => {
       setSelectedModuleError(true);
     }
     try {
-      // const { data, error } = await supabase.from("words").insert();
-      // if (data) {
-      //   const res = [data];
-      // }
-      // if (error) {
-      //   console.error(error);
-      // }
-      // setModulesOfUser(res.modules);
-
       setSuccess(true);
       setTimeout(() => setSuccess(false), 1500);
       setLoading(false);
