@@ -8,7 +8,7 @@ const BooksPage = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await fetch("http://localhost:3000/books/all");
+        const response = await fetch("https://tilingo-server.vercel.app/books/all");
         const data = await response.json();
         setBooks(data.books);
       } catch (error) {

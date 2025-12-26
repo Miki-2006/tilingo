@@ -8,7 +8,7 @@ const MoviesPage = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await fetch("http://localhost:3000/movies/all");
+        const response = await fetch("https://tilingo-server.vercel.app/movies/all");
         const data = await response.json();
         setMovies(data.movies);
       } catch (error) {

@@ -16,7 +16,7 @@ const BookReadingPage = () => {
   useEffect(() => {
     async function fetchBookUrl() {
       try {
-        // await fetch(`http://localhost:3000/books/${id}`)
+        // await fetch(`https://tilingo-server.vercel.app/books/${id}`)
         //   .then((response) => response.json())
         //   .then((data) => setBookUrl(data.fileUrl));
         const { data, error } = await supabase.storage

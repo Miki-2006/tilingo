@@ -7,30 +7,30 @@ import SwiperContainer from "./Swiper/Swiper";
 
 const Main = () => {
 
-  useEffect(() => {
-    const sendTokenToServer = async () => {
-      const { data, error } = await supabase.auth.getSession();
-      const token = data?.session?.access_token;
+  // useEffect(() => {
+  //   const sendTokenToServer = async () => {
+  //     const { data, error } = await supabase.auth.getSession();
+  //     const token = data?.session?.access_token;
 
-      if (token) {
-        console.log(token );
+  //     if (token) {
+  //       console.log(token );
         
-        await fetch('http://localhost:3000/auth/verify', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-          },
-        });
-      }
+  //       await fetch('https://tilingo-server.vercel.app/auth/verify', {
+  //         method: 'POST',
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //           Authorization: `Bearer ${token}`,
+  //         },
+  //       });
+  //     }
 
-      if (error) {
-        console.error('Ошибка при получении токена:', error.message);
-      }
-    };
+  //     if (error) {
+  //       console.error('Ошибка при получении токена:', error.message);
+  //     }
+  //   };
 
-    sendTokenToServer();
-  }, []);
+  //   sendTokenToServer();
+  // }, []);
 
   return (
     <div className={styles.main}>

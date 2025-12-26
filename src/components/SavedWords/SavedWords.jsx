@@ -13,7 +13,7 @@ const SavedWords = ({ user }) => {
         const { data: modules, error } = await supabase
           .from("modules")
           .select("*")
-          .eq("user_id", user.id);
+          .eq("userId", user.id);
         if (modules) {
           setModulesOfUser(modules);
           setWords()

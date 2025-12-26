@@ -45,7 +45,7 @@ const Definition = () => {
       throw new Error('Set the language!!!')
     }
     try {
-      const res = await fetch(`http://localhost:3000/dictionary/${lang}/definition/${word}`)
+      const res = await fetch(`https://tilingo-server.vercel.app/dictionary/${lang}/definition/${word}`)
       if (res.ok) {
         const data = await res.json()        
         setWordData(data)

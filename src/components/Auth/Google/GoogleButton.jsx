@@ -4,20 +4,23 @@ import { useEffect } from "react";
 
 const GoogleButton = () => {
   const handleGoogleLogin = async () => {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo: "http://localhost:3001/",
-      },
-    });
-console.log(data);
+    try {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo: "http://localhost:3001/",
+        },
+      });
+      console.log(data);
 
-    if (error) {
-      console.error("Error signing in with Google:", error.message);
-    } else {
-      console.log("Redirecting for Google sign-in...");
+      if (error) {
+        console.error("Error signing in with Google:", error.message);
+      } else {
+        console.log("Redirecting for Google sign-in...");
+      }
+    } catch (error) {
+      console.error(`Sign in error: ${error}`);
     }
-
   };
 
   // useEffect(() => {
@@ -26,7 +29,7 @@ console.log(data);
   //       if (event === "SIGNED_IN" && session) {
   //         const token = session.access_token;
 
-  //         await fetch("http://localhost:3000/auth/verify", {
+  //         await fetch("https://tilingo-server.vercel.app/auth/verify", {
   //           method: "POST",
   //           headers: {
   //             "Content-Type": "application/json",

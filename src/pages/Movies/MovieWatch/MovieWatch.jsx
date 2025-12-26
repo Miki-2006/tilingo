@@ -9,7 +9,7 @@ const MovieWatch = () => {
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        await fetch(`http://localhost:3000/movies/${id}`)
+        await fetch(`https://tilingo-server.vercel.app/movies/${id}`)
           .then((res) => res.json())
           .then((data) => setMovie(data));
       } catch (e) {
