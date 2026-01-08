@@ -10,7 +10,7 @@
 .card1{
     width: 40vw;
     height: 40vh;
-    background-color: #5B7BFE;
+    background-color: #466afb;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,8 +20,8 @@
 }
 .icon{
     color: #ffff;
-    width: 2.3rem;
-    height: 2.3rem;
+    width: clamp(2.8rem, 2.5vw, 4rem);
+    height: clamp(2.8rem, 2.5vw, 4rem);
 }
 .card2{
     width: 40vw;
@@ -38,7 +38,7 @@
 .card4{
     width: 40vw;
     height: 40vh;
-    background-color: #5B7BFE;
+    background-color: #466afb;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,7 +61,7 @@
 .link{
     text-decoration: none;
     color: #ffff;
-    font-size: 1.5rem;
+    font-size: clamp(2.2rem, 2.5vw, 3rem);
 }
 @media (max-width: 700px) {
     .container{

@@ -22,6 +22,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  gap: clamp(10px, 15px, 20px);
   align-items: center;
   justify-content: center;
   color: white;
@@ -43,15 +44,16 @@
 
 .abbreviation {
   font-weight: bold;
+  font-size: clamp(16px, 20px, 25px);
 }
 
 .description {
-  font-size: 0.9rem;
+  font-size: clamp(14px, 18px, 22px);
 }
 @media (max-width: 355px) {
   .slide{
     width: 270px;
-    height: 220px;
+    height: 250px;
   }
 }
 /* .container{

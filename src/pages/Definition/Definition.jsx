@@ -85,10 +85,10 @@ const Definition = () => {
   useEffect(() => {
     const fetchModulesOfUser = async () => {
       const userId = JSON.parse(localStorage.getItem("user"))?.id;
-      // if (!userId) {
-      //   navigate("/sign-in");
-      //   return;
-      // }
+      if (!userId) {
+        console.error("User is not logged in!");
+        return;
+      }
       try {
         const { data: modules } = await supabase
           .from("modules")

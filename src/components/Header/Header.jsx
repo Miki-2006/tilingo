@@ -15,7 +15,7 @@ const Header = () => {
         <Link className={styles.link} to="/contacts">
           <b>contacts</b>
         </Link>
-        <Link to="/profile" style={{"border-left": "2px solid #B39FDA", "padding-left": "clamp(1rem, 2vw, 3rem"}}>
+        <Link to="/profile" style={{"borderLeft": "2px solid #B39FDA", "paddingLeft": "clamp(1rem, 2vw, 3rem"}}>
           <FaUserCircle className={styles.user} />
         </Link>
       </div>
