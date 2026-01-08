@@ -2,9 +2,7 @@ import { MdQuiz } from "react-icons/md";
 import styles from "./page.module.css";
 import { SiDictionarydotcom } from "react-icons/si";
 import { Link } from "react-router-dom";
-import { IoBookSharp, IoLanguage } from "react-icons/io5";
-import { PiGraphBold } from "react-icons/pi";
-import { RiMovieFill } from "react-icons/ri";
+import { IoBookSharp } from "react-icons/io5";
 
 const PageCards = () => {
   return (
@@ -27,7 +25,7 @@ const PageCards = () => {
           <b>Books</b>
         </div>
       </Link>
-      <Link to="/graphs" className={styles.link}>
+      {/* <Link to="/graphs" className={styles.link}>
         <div className={styles.card4}>
           <PiGraphBold className={styles.icon} />
           <b>Graphs</b>
@@ -38,13 +36,7 @@ const PageCards = () => {
           <RiMovieFill className={styles.icon} />
           <b>Movies</b>
         </div>
-      </Link>
-      <Link to="/languages" className={styles.link}>
-        <div className={styles.card3}>
-          <IoLanguage className={styles.icon} />
-          <b>Languages</b>
-        </div>
-      </Link>
+      </Link> */}
     </div>
   );
 };

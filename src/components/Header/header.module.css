@@ -1,7 +1,7 @@
 .header{
     background-color: #410FA3;
     width: 100%;
-    padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 5vw, 5rem);
+    padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 7vw, 15rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,6 +9,7 @@
 .logo{
     color: white;
     margin: 0;
+    font-size: clamp(2rem, 2vw, 3rem);
 }
 .log{
     text-decoration: none;
@@ -23,9 +24,18 @@
     font-size: 1.3rem;
     color: #B39FDA;
 }
+.link b{
+    font-size: clamp(1.3rem, 1vw, 3rem);
+}
 .user{
     font-size: 2rem;
     color: white;
     margin: 0;
+}
 
+
+@media (max-width: 768px) {
+    .link{
+        display: none;
+    }
 }

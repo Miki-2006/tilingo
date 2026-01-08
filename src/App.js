@@ -12,10 +12,7 @@ import QuizCard from "./components/QuizCard/QuizCard.jsx";
 import TestGenerate from "./pages/TestPages/TestGenerate/TestGenerate.jsx";
 import BooksPage from "./pages/Books/Books.jsx";
 import BookReadingPage from "./pages/Books/BookReadingPage/BookReadingPage.jsx";
-import GraphTestPage from "./pages/GraphTestPage/GraphTestPage.jsx";
-import LanguagesPage from "./pages/Languages/LanguagesPage.jsx";
-import MoviesPage from "./pages/Movies/MoviesPage.jsx";
-import MovieWatch from "./pages/Movies/MovieWatch/MovieWatch.jsx";
+import Contacts from "./pages/Info/Contacts/Contacts.jsx";
 
 function App() {
   return (
@@ -33,10 +30,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/books" element={<BooksPage />} />
         <Route path="/books/:id" element={<BookReadingPage />} />
-        <Route path="/graphs" element={<GraphTestPage />} />
-        <Route path="/languages" element={<LanguagesPage />} />
-        <Route path="/movies" element={<MoviesPage />} />
-        <Route path="/movies/:id" element={<MovieWatch />} />
+        <Route path="/contacts" element={<Contacts/>}/>
         <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>
       <Footer />

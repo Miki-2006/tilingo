@@ -5,8 +5,9 @@
   box-sizing: border-box;
   font-family: 'Fredoka';
 }
-html{
+html, body{
   font-size: 16px;
+  overflow-x: hidden;
 }
 /* Tablet */
 @media (max-width: 768px) {

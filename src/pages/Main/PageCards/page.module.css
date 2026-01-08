@@ -61,5 +61,15 @@
 .link{
     text-decoration: none;
     color: #ffff;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+}
+@media (max-width: 700px) {
+    .container{
+        flex-direction: column;
+        margin: 0 auto 20px auto;
+    }
+    .card1, .card2, .card3, .card4{
+        width: clamp(250px, 60vw, 70vw);
+        /* width: clamp(10rem, 15vw, 50rem); */
+    }
 }

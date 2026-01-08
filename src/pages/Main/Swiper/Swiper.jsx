@@ -15,6 +15,7 @@ const SwiperContainer = () => {
         slidesPerView={1}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop={true}
+        className={styles.swiper}
       >
         <SwiperSlide className={styles.slide}><img className={styles.img} src={require("../../../assets/images/kgz.jpg")}  alt="kgz" /></SwiperSlide>
         <SwiperSlide className={styles.slide}><img className={styles.img} src={require("../../../assets/images/rus.jpg")}  alt="rus" /></SwiperSlide>

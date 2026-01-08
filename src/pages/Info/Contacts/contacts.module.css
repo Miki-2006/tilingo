@@ -1,0 +1,35 @@
+.contacts{
+    width: 100%;
+    padding: clamp(1rem, 1vw, 2rem) clamp(1rem, 2vw, 8rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+.links{
+    background-color: #5B7BFE;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 2vw, 5rem);
+    padding: clamp(3rem, 2vw, 6rem) clamp(3rem, 2vw, 6rem);
+    border-radius: 15px;
+}
+.link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #ffff;
+    gap: clamp(1rem, 1vw, 2rem);
+    border-bottom: 1px solid #ffff;
+    border-radius: 15px;
+    padding: 5px;
+}
+.link b{
+    color: wheat;
+    font-size: clamp(1rem, 2vw, 2rem);
+}
+
+.link:hover{
+    border: 1px solid #ffff;
+}
