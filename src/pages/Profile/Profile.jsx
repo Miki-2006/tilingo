@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import SavedWords from "../../components/SavedWords/SavedWords";
 import NoUser from "../../components/Auth/NoUser/NoUser";
@@ -24,13 +24,6 @@ const Profile = () => {
     }
   };
   getUser();
-
-  // useEffect(() => {
-  //   const getUser = async () => {
-  //     setUserData(JSON.parse(localStorage.getItem("user")));
-  //   };
-  //   getUser();
-  // }, []);
 
   if (!userData) {
     return <NoUser />;

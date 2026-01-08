@@ -11,7 +11,6 @@ import Quizzes from "./pages/Quizzes/Quizzes.jsx";
 import QuizCard from "./components/QuizCard/QuizCard.jsx";
 import TestGenerate from "./pages/TestPages/TestGenerate/TestGenerate.jsx";
 import BooksPage from "./pages/Books/Books.jsx";
-import BookReadingPage from "./pages/Books/BookReadingPage/BookReadingPage.jsx";
 import Contacts from "./pages/Info/Contacts/Contacts.jsx";
 
 function App() {
@@ -29,7 +28,6 @@ function App() {
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/books" element={<BooksPage />} />
-        <Route path="/books/:id" element={<BookReadingPage />} />
         <Route path="/contacts" element={<Contacts/>}/>
         <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>

@@ -71,6 +71,7 @@ const SignUp = () => {
           <form onSubmit={(e) => addUser(e)}>
             <NickNameInput nickName={nickName} setNickName={setNickName} />
             <EmailInput email={email} setEmail={setEmail} />
+            <PasswordInput passwordError={passwordError} setPassword={setPassword}/>
             <CheckBox />
             <GoogleButton />
             <a href="/sign-in" className={styles.link}>

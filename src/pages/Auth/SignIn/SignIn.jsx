@@ -54,6 +54,7 @@ const SignIn = () => {
           <h1 className={styles.title}>Welcome!</h1>
           <form onSubmit={(e) => checkUserFromDB(e)}>
             <NickNameInput nickName={nickName} setNickName={setNickName} />
+            <PasswordInput setPassword={setPassword} isPasswordNotCorrect={isPasswordNotCorrect}/>
             <CheckBox />
             <GoogleButton />
             <a href="/sign-up" className={styles.link}>

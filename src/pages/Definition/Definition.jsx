@@ -109,6 +109,8 @@ const Definition = () => {
 
   const handleSave = async () => {
     setLoading(true);
+    console.log(image);
+    
 
     if (!localStorage.getItem("user")) {
       navigate("/sign-in");

@@ -1,6 +1,5 @@
 import styles from "./button.module.css";
 import supabase from "../../../services/supabase";
-import { useEffect } from "react";
 
 const GoogleButton = () => {
   const handleGoogleLogin = async () => {
@@ -23,27 +22,6 @@ const GoogleButton = () => {
     }
   };
 
-  // useEffect(() => {
-  //   const { data: listener } = supabase.auth.onAuthStateChange(
-  //     async (event, session) => {
-  //       if (event === "SIGNED_IN" && session) {
-  //         const token = session.access_token;
-
-  //         await fetch("https://tilingo-server.vercel.app/auth/verify", {
-  //           method: "POST",
-  //           headers: {
-  //             "Content-Type": "application/json",
-  //             Authorization: `Bearer ${token}`,
-  //           },
-  //         });
-  //       }
-  //     }
-  //   );
-
-  //   return () => {
-  //     listener?.subscription.unsubscribe();
-  //   };
-  // }, []);
 
   return (
     <div className={styles.wrapper}>

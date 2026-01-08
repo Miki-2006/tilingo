@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import styles from "./page.module.css";
 import { useParams } from "react-router-dom";
 import { ReactReader } from "react-reader";
 import supabase from "../../../services/supabase";
