@@ -1,45 +1,29 @@
-import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import SavedWords from "../../components/SavedWords/SavedWords";
 import NoUser from "../../components/Auth/NoUser/NoUser";
 import { IoIosLogOut } from "react-icons/io";
 import styles from "./profile.module.css";
-import supabase from "../../services/supabase";
+import { useAuth } from "../../contexts/AuthContext";
 
 const Profile = () => {
-  const [userData, setUserData] = useState(null);
+  const {user} = useAuth();
 
-  const getUser = async () => {
-    try {
-      const {data: {user}} = await supabase.auth.getUser();
-
-      if (!user) {
-        console.error("User not found!!!");
-        return
-      }
-
-      setUserData(user)
-    } catch (error) {
-      console.error(`Error while getting user: ${error}`);
-    }
-  };
-  getUser();
-
-  if (!userData) {
+  if (!user) {
     return <NoUser />;
   }
 
   const LogOut = async () => {
-    try {
-      const {error} = await supabase.auth.signOut();
-      if (error) {
-        console.log("Error in loging out!!!");
-      }
+    // try {
+    //   const {error} = await supabase.auth.signOut();
+    //   if (error) {
+    //     console.log("Error in loging out!!!");
+    //   }
 
-      window.location.reload()
-    } catch (error) {
-      console.error(`Error while loging out: ${error}`);
-    }
+    //   window.location.reload()
+    // } catch (error) {
+    //   console.error(`Error while loging out: ${error}`);
+    // }
+    console.log('LOG OUT');
   };
 
   return (
@@ -47,10 +31,10 @@ const Profile = () => {
       <div className={styles.card}>
         <div className={styles.header}>
           <FaUserCircle className={styles.userIcon} />
-          <h1 className={styles.nick}>{userData?.email}</h1>
+          <h1 className={styles.nick}>{user.user_metadata?.email}</h1>
           <IoIosLogOut className={styles.logoutIcon} onClick={LogOut} />
         </div>
-        <SavedWords user={userData} />
+        <SavedWords user={user} />
       </div>
     </div>
   );

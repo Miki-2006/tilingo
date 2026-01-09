@@ -19,6 +19,13 @@ const LanguagesPage = () => {
         {languages.map((el, index) => (
           <SwiperSlide key={index} className={styles.slide}>
             <div className={styles.language}>
+              <div className={styles.levels}>
+                {
+                  el.levels.map((l, i) => (
+                    <span key={i}>{l}</span>
+                  ))
+                }
+              </div>
               <div className={styles.top}>
                 {el["country-flag-icons"].map((flag, i) => (
                   <img

@@ -11,7 +11,7 @@
 
 .slide {
   width: 300px;
-  height: 250px;
+  height: 300px;
 }
 
 .language {
@@ -24,11 +24,25 @@
   flex-direction: column;
   gap: clamp(10px, 15px, 20px);
   align-items: center;
-  justify-content: center;
   color: white;
   height: 100%;
   width: 100%;
 }
+
+.levels{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: clamp(5px, 8px, 13px);
+  margin-bottom: 2rem;
+}
+.levels span{
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: rgb(2, 180, 2);
+}
+
 
 .top {
   display: flex;
@@ -53,31 +67,6 @@
 @media (max-width: 355px) {
   .slide{
     width: 270px;
-    height: 250px;
+    height: 270px;
   }
 }
-/* .container{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    gap: 10px;
-}
-.top{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-.flag{
-    width: 60px;
-    height: 40px;
-    object-fit: contain;
-}
-.abbreviation{
-    font-weight: 900;
-    font-size: large;
-}
-.description{
-
-} */
